@@ -1,2 +1,1 @@
-# Portfolio
-A Personal Portfolio website
+# MERN Project
