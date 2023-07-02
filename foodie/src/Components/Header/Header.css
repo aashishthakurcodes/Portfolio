@@ -1,0 +1,16 @@
+.Header_container{
+    display: flex;
+    border: 2px solid red;
+    justify-content: space-around;
+    align-items: center;
+}
+.header_ul{
+    display: flex;
+   list-style: none;
+    gap: 20px;
+}
+.header-btn button{
+    margin: 0px 10px;
+    /* border: 2px solid red; */
+
+}
