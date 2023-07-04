@@ -1,12 +1,17 @@
 import React from "react";
 import "./Header.css";
 import { Link,useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Header = () => {
   const navigate=useNavigate();
   const handlelogout=()=>{
    localStorage.removeItem("authToken");
    navigate("/login")
   }
+
+  const cartItems=useSelector(reduxStore=>reduxStore.cart.items)
+    console.log(cartItems);
+
     return (
     <div>
       <navbar className="Header_container">
@@ -33,7 +38,9 @@ const Header = () => {
         ) : 
           <div>
             <div onClick={handlelogout}>Logout</div>
-            <div>Cart</div>
+            <Link to={"/cart"}>
+          <li>Cart{cartItems.length}</li>
+          </Link>
           </div>
         }
       </navbar>
