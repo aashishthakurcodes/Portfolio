@@ -29,7 +29,7 @@ const SignUp = () => {
       const json = await response.json();
       console.log(json);
       if (!json.success) {
-        alert("Enter valid credentials");
+        alert("Account Created");
       }
     } catch (error) {
       console.error("Error:", error);

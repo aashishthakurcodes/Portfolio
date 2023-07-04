@@ -24,11 +24,14 @@ const Login = () => {
 
       const json = await response.json();
       console.log(json);
-      if (!json.Success) {
+      if (!json.success) {
         alert("Enter valid credentials");
         console.log("sucess");
       }
-      if (json.Success) {
+      if (json.success) {
+        //LOcal Storage
+        localStorage.setItem("authToken",json.authToken);
+        console.log(localStorage.getItem("authToken"));
        navigate("/")
        console.log("failed");
       }
