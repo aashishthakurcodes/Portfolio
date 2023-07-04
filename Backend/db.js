@@ -7,12 +7,18 @@ const mongoDb = async () => {
   
       console.log('Connected successfully');
   
-      const fetchData = await mongoose.connection.db.collection('Category');
+      const fetchData = await mongoose.connection.db.collection('fooditems');
+      const fetchCat = await mongoose.connection.db.collection('Category');
+
       try {
         const data = await fetchData.find({}).toArray();
         console.log('Number of documents:', data.length);
-       
-        console.log(data);
+        const dataCat = await fetchCat.find({}).toArray();
+        console.log('Number of documents:', dataCat.length);
+        global.fooditems=data;
+        global.Category=dataCat;
+        console.log(global.fooditems);
+        console.log(global.Category);
       } catch (error) {
         console.error('Error retrieving data:', error);
       }
@@ -22,5 +28,3 @@ const mongoDb = async () => {
   };
   
   module.exports = mongoDb;
-  
-

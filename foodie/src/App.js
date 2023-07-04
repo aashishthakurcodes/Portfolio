@@ -6,6 +6,7 @@ import SignUp from "./SignUp/SignUp";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./SignUp/Login";
 
+
 function App() {
   return (
     <Router> 
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route exact path="/login" element={<Login/>}/>
           <Route exact path="/" element={<Container />} />
+          
           <Route exact path="/createuser" element={<SignUp/>} />
           {/* <Route exact path="/createuser" element={<SignUp/>} /> */}
         </Routes>
