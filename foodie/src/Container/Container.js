@@ -42,6 +42,7 @@ const Container = () => {
                             foodname={filterItem.name}
                             imgSrc={filterItem.img}
                             options={filterItem.options[0]}
+                          
                           />
                         </div>
                       );

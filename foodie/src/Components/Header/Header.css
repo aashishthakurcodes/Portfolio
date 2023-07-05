@@ -1,10 +1,14 @@
+
+
 .Header_container{
     display: flex;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     justify-content: space-around;
     align-items: center;
-    box-shadow: 1px 10px 14px -1px rgba(122,116,122,1);
-    /* max-width: 1400px; */
+    box-shadow: 1px 10px 14px 1px rgba(122,116,122,1);
+
+
+   
 }
 .nav-link{
     text-decoration: none;
@@ -17,7 +21,7 @@
   list-style: none;
   gap: 20px; 
   font-size: 18px;
-  font-family: "Assistant"; 
+  
   font-weight: 500;
 }
 
@@ -28,6 +32,6 @@
     border-radius: 5px;
     text-decoration: none;
     margin:  0px 5px;
-    font-family: "Assistant"; 
+    
 }
 

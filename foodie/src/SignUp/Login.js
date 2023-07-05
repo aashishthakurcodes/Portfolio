@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import "./login.css"
+import img2 from "./istockphoto-1329516017-612x612.jpg";
+import user from "./download.png"
 const Login = () => {
   const [credential, setCredential] = useState({
     email: "",
@@ -47,27 +49,45 @@ const Login = () => {
 
   return (
     <div>
+      <div className="login_container">
+        <div className="img_login">
+          <img src={img2} alt="bgimg"/>
+        </div>
+        <div className="login_info">
       <form onSubmit={handleSubmit}>
+        <div className="user_img">
+          {/* <img className="user" src={user} alt="bgimg" /> */}
+          <h1 className="sign_up">Login</h1>
+        </div>
+        <div className="user_data">
         <label>Email Address</label>
         <input
           type="email"
           id="usermail"
           name="email"
+          className="input"
           value={credential.email}
           onChange={handleChange}
         />
+        </div>
+        <div className="user_data">
         <label>Password</label>
         <input
+          className="input"
           type="password"
           id="userpass"
           name="password"
           value={credential.password}
           onChange={handleChange}
         />
-
-        <button type="submit">Submit</button>
-        <Link to="/createuser">I am a new user</Link>
+        </div>
+        <div className="btn_login">
+        <button className="login_sub" type="submit">Log in</button>
+        <Link className="login_link" to="/createuser">I am a new user</Link>
+        </div>
       </form>
+      </div>
+      </div>
     </div>
   );
 };

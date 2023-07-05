@@ -13,8 +13,8 @@ const Header = () => {
     console.log(cartItems);
 
     return (
-    <div>
-      <navbar className="Header_container">
+    <div className="main">
+      <div className="Header_container">
         <div className="header_ul">
           
             <Link className="nav-link" to={"/"}>
@@ -43,7 +43,7 @@ const Header = () => {
           </Link>
           </div>
         }
-      </navbar>
+      </div>
     </div>
   );
 };

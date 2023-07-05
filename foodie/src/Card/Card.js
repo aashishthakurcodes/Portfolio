@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addItems } from '../Utilis/cartSlice';
 import { removeItems } from '../Utilis/cartSlice';
@@ -9,12 +9,16 @@ const Card = (props) => {
   const priceOption = Object.keys(options);
   const dispatch = useDispatch();
 
+  const [selectedOption, setSelectedOption] = useState(priceOption[0]);
+  const [quantity, setQuantity] = useState(1);
+
   const handleAddItem = () => {
-    // Dispatch the addItems action with the name and imgSrc as payload
     dispatch(
       addItems({
         name: props.foodname,
-        img: props.imgSrc
+        img: props.imgSrc,
+        option: selectedOption,
+        quantity: quantity
       })
     );
   };
@@ -24,6 +28,19 @@ const Card = (props) => {
     dispatch(removeItems());
   };
 
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+
+  const handleQuantityChange = (event) => {
+    setQuantity(parseInt(event.target.value));
+  };
+
+  const getPrice = () => {
+    const selectedPriceOption = options[selectedOption];
+    return selectedPriceOption * quantity;
+  };
+
   return (
     <div>
       <div>
@@ -31,7 +48,15 @@ const Card = (props) => {
         <h1>{props.foodname}</h1>
         {/* <p>rygvhjbjbcbcjbcwdwhdjwndjwndjjndjjbcjbjbjbcbhjwbbh</p> */}
         <div>
-          <select>
+          <select value={selectedOption} onChange={handleOptionChange}>
+            {priceOption.map((data) => (
+              <option key={data} value={data}>
+                {data}
+              </option>
+            ))}
+          </select>
+
+          <select value={quantity} onChange={handleQuantityChange}>
             {Array.from(Array(6), (e, i) => {
               return (
                 <option key={i + 1} value={i + 1}>
@@ -40,19 +65,13 @@ const Card = (props) => {
               );
             })}
           </select>
-
-          <select>
-            {priceOption.map((data) => (
-              <option key={data} value={data}>
-                {data}
-              </option>
-            ))}
-          </select>
         </div>
-        <div>Total Price</div>
+        <div>Price: {getPrice()}</div>
+       
         <button onClick={handleAddItem}>Add to cart</button>
         <button onClick={handleRemoveItem}>Remove Items</button>
         <hr />
+        <FoodItems price={getPrice()}/>
       </div>
     </div>
   );
