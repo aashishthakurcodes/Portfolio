@@ -48,7 +48,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="login_main">
       <div className="login_container">
         <div className="img_login">
           <img src={img2} alt="bgimg"/>

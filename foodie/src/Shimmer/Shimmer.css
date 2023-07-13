@@ -1,0 +1,32 @@
+.shimmer_container {
+    border: 2px solid rgb(252, 252, 255);
+    background: #a99696;
+    height: 250px;
+    width: 350px;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    /* margin: 10px 0px; */
+    margin-top: 30px;
+    flex-wrap: wrap;
+    /* border: 3px solid greenyellow; */
+  }
+  
+  .shimmer_header {
+    padding-top: 180px;
+    height: 20px;
+    width: 100%;
+    background: #d7cfcf;
+  }
+  
+  .shimer_div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .shimamn {
+    display: flex;
+    /* margin-top: 60px; */
+    /* border: 5px solid rgb(76, 0, 255); */
+  }

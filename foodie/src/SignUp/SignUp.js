@@ -14,6 +14,7 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      
       const response = await fetch("http://localhost:5000/api/createuser", {
         method: "POST",
         headers: {
@@ -30,9 +31,16 @@ const SignUp = () => {
 
       const json = await response.json();
       console.log(json);
-      if (!json.success) {
-        alert("Account Created");
+      if (json.success) {
+        alert("Account Created Go to login page");
+        setCredential({
+          name: "",
+          email: "",
+          password: "",
+          geolocation: "",
+        });
       }
+     
     } catch (error) {
       console.error("Error:", error);
       alert("An error occurred. Please try again later.");
@@ -44,7 +52,7 @@ const SignUp = () => {
   };
 
   return (
-    <div>
+    <div className="sign_main">
       <div className="container">
         <div className="form_img">
           <img src={img} alt="bgimg" />

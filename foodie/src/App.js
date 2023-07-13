@@ -8,6 +8,8 @@ import Login from "./SignUp/Login";
 import { Provider } from "react-redux";
 import reduxStore from "./Utilis/reactStore";
 import Cart from "./Utilis/Cart";
+import Contact from "./Contact_pg/Contact"
+import Info from "./Info/Info";
 
 
 function App() {
@@ -19,9 +21,12 @@ function App() {
         <Routes>
           <Route exact path="/login" element={<Login/>}/>
           <Route exact path="/" element={<Container />} />
+          <Route exact path="/contactus" element={<Contact/>} />
           
           <Route exact path="/createuser" element={<SignUp/>} />
           <Route path="/cart" element={<Cart/>} />
+          <Route path='/info/:mealid' element={<Info/>} />
+        
           {/* <Route exact path="/createuser" element={<SignUp/>} /> */}
         </Routes>
         <Footer />

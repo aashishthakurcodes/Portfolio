@@ -6,6 +6,7 @@
     justify-content: space-around;
     align-items: center;
     box-shadow: 1px 10px 14px 1px rgba(122,116,122,1);
+    font-family: "Assistant";
 
 
    
@@ -32,6 +33,30 @@
     border-radius: 5px;
     text-decoration: none;
     margin:  0px 5px;
+    cursor: pointer;
     
+}
+.logout_btn{
+    padding:  5px 10px;
+    background: #363434;
+    color: rgb(252, 252, 252);
+    border-radius: 5px;
+    text-decoration: none;
+    margin:  0px 5px;
+    cursor: pointer;
+}
+.logout_btn:hover{
+    background: #555252;
+}
+.cart_length{
+    margin-left: 3px;
+    background: #555252;
+    padding:0px 8px;
+    border-radius: 10px;
+    color: #ffff;
+    margin-top: -10px;
+}
+.cart_Link{
+    text-decoration: none;
 }
 

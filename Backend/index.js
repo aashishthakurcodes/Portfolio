@@ -17,6 +17,7 @@ app.use((req,res,next)=>{
 app.use(express.json())
 app.use('/api', require("./Routes/Createuser"));
 app.use('/api', require("./Routes/DisplayData"));
+// app.use('/api', require("./info/:mealid"));
 app.listen(port,()=>{
     console.log(`App is listning on port  ${port}`);
 })
